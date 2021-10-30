@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3002;
 
 let notes = []
-let MarioBros = ["Mario", "Luigi", "Peach","Daisy","Rosalina","Yoshi","Wario","Waluigi"]
+// let MarioBros = ["Mario", "Luigi", "Peach","Daisy","Rosalina","Yoshi","Wario","Waluigi"]
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'notes.html'));
@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
   app.get('/api/notes', (req, res) => {
     return res.json(notes);
   });
-  app.get('/api/Mario', (req, res) => {
-    return res.json(MarioBros);
-  });
+  // app.get('/api/Mario', (req, res) => {
+  //   return res.json(MarioBros);
+  // });
 
 
   app.get('/api/characters/:character', (req, res) => {
