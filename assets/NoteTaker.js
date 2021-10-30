@@ -5,6 +5,7 @@ const app = express();
 const PORT = 3002;
 
 let notes = []
+let MarioBros = ["Mario", "Luigi", "Peach","Daisy","Rosalina","Yoshi","Wario","Waluigi"]
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'notes.html'));
@@ -12,6 +13,9 @@ app.get('/', (req, res) => {
 
   app.get('/api/notes', (req, res) => {
     return res.json(notes);
+  });
+  app.get('/api/Mario', (req, res) => {
+    return res.json(MarioBros);
   });
 
 
@@ -46,3 +50,6 @@ app.get('/', (req, res) => {
   app.listen(PORT, () => {
     console.log(`App listening on PORT ${PORT}`);
   });
+
+  // need to download express and then run node
+  // need to run node for each change
