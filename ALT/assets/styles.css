@@ -9,6 +9,10 @@ body {
   display: none;
 }
 
+.new-note:hover{
+    color:#757575;
+}
+
 .icons i {
   margin-left: 15px;
   margin-right: 15px;
@@ -22,6 +26,8 @@ body {
   width: 100%;
   outline: none;
   border: none;
+  text-align: center;
+  font-size: 48px;
 }
 
 .note-textarea {

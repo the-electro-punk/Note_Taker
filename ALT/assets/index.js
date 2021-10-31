@@ -4,11 +4,14 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+let notesColumn = window.localStorage
+
 if (window.location.pathname === './notes.html') {
+    console.log('this is notes.html')
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  newNoteBtn = document.getElementById('new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -77,6 +80,7 @@ const handleNoteSave = () => {
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    save()
   });
 };
 
@@ -109,6 +113,7 @@ const handleNoteView = (e) => {
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
+  console.log("new note added")
 };
 
 const handleRenderSaveBtn = () => {
@@ -184,3 +189,18 @@ if (window.location.pathname === '/notes.html') {
 }
 
 getAndRenderNotes();
+
+
+// this is intended to save notes in localstorage
+function save() {
+    var new_note_data = document.querySelector('.input').value
+    if(notesColumn.getItem('data')==null){
+        notesColumn.setItem('data', '[]')
+    }
+    var old_note_data = JSON.parse(gameList.getItem('data'))
+    old_note_data.push(new_note_data)
+
+    notesColumn.setItem('data', JSON.stringify(old_note_data))
+    noteText.value = ""
+    console.log(notesColumn)
+}

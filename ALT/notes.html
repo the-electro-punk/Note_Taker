@@ -15,7 +15,7 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="C:\Users\Ben\Desktop\_Coding BootCamp\_weeks lessons\week 11\miniature-eureka\Develop\public\assets\css\styles.css" />
+    <!-- <link rel="stylesheet" href="C:\Users\Ben\Desktop\_Coding BootCamp\_weeks lessons\week 11\miniature-eureka\Develop\public\assets\css\styles.css" /> -->
   </head>
 
   <body>
@@ -23,31 +23,35 @@
       <a class="navbar-brand" href="/">Note Taker </a>
       <div class="icons">
         <i class="fas fa-save text-light save-note"></i>
-        <i class="fas fa-plus text-light new-note"></i>
+        <button id="new-note" class="fas fa-plus text-light new-note"></button>
       </div>
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-4 list-container">
+        <div id="list-container" class="col-4 list-container">
           <div class="card">
             <ul class="list-group"></ul>
           </div>
         </div>
         <div class="col-8" style="display: flex; flex-direction: column;margin-left: auto; margin-right: auto">
-          <input          
+          <input 
+          id='noteInput'         
           class="note-title"
           placeholder="Note Title"
           maxlength="28"
           type="text"
+          style="width: 25%; height: 50px; font-size: 24px; margin-top: 20px; margin-left: 75px"
           />
-          <textarea           
+          <input
+          id="noteContent"        
           class="note-textarea" 
-          placeholder="Note Text">
-        </textarea>
+          placeholder="Note Text"
+          style='width: 40%; height: 300px; margin-top: 20px; font-size: 24px; text-align: center'>
+        </input>
         </div>
       </div>
     </div>
-    <script src="C:\Users\Ben\Desktop\_Coding BootCamp\_weeks lessons\week 11\miniature-eureka\Develop\public\assets\js\index.js"></script>
+    <script src="C:\Users\Ben\Desktop\_Coding BootCamp\_weeks lessons\week 11\Note_Taker\ALT\assets\notes.js" defer></script>
   </body>
 </html>
 
