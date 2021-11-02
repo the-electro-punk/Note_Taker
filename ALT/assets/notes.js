@@ -15,13 +15,15 @@ newNote = () => {
     // if (noteTitle.value & noteText.value != null) {
 
         // this creates an HTML element containing the inputted data
-        if (noteTitle.value != '' && noteText != '') {
-            newNote = noteTitle.value + ':' + '\n' + noteText.value
-            noteList.push(newNote)
-            console.log("note list is " + noteList)
-            noteColumn.textContent = noteList
-            console.log("noteColumn is " + noteColumn)
-        }
+        // if (noteTitle.value != '' && noteText != '') {
+            for (let i = 0; i < noteList.length; i++ ) {
+                newNote = noteTitle.value + ':' + '\n' + noteText.value
+                noteList.push(newNote)
+                console.log("note list is " + noteList)
+                noteColumn.textContent = noteList
+                console.log("noteColumn is " + noteColumn)
+            }
+        // }
 
         // var new_note_data = noteText.value
         // if(noteList.getItem('data')==null){
